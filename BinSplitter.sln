@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinSplitter", "BinSplitter\BinSplitter.csproj", "{720978E6-25D4-4810-95F6-10E708949DE0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BinSplitterTest", "BinSplitterTest\BinSplitterTest.csproj", "{7BCE4227-E50D-457E-B060-D66BBE4A1C02}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{720978E6-25D4-4810-95F6-10E708949DE0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{720978E6-25D4-4810-95F6-10E708949DE0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{720978E6-25D4-4810-95F6-10E708949DE0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{720978E6-25D4-4810-95F6-10E708949DE0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BCE4227-E50D-457E-B060-D66BBE4A1C02}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BCE4227-E50D-457E-B060-D66BBE4A1C02}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BCE4227-E50D-457E-B060-D66BBE4A1C02}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BCE4227-E50D-457E-B060-D66BBE4A1C02}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
