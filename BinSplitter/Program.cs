@@ -35,12 +35,16 @@ namespace BinSplitter
             var targetBytes = ReadFileAsBytes(targetFilePath);
 
             var splitAddresses = FindPatternAddresses(targetBytes, SearchPattern);
+            Console.WriteLine("パターンの検索が終了しました");
 
             var sp = SplitBytesByHeaders(targetBytes, splitAddresses);
+            Console.WriteLine($"{sp.Count} 個のファイルを生成します。");
+
             for (var i = 0; i < sp.Count; i++)
             {
                 var p = $@"output\{i:D5}{OutputFileExtension}";
                 WriteBytesToFile(p, sp[i]);
+                Console.WriteLine($"{p} を生成しました。");
             }
         }
 
