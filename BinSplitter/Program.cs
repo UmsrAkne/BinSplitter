@@ -7,29 +7,39 @@ namespace BinSplitter
 {
     public class Program
     {
+        // 分割するパターンです。このパターンが先頭に来るように配列が分割されます。
+        private readonly static byte[] SearchPattern = { 0x7b, };
+
+        // 読み込むファイル名。アプリのルートディレクトリに設置
+        private const string TargetFilePath = "target";
+
+        // 出力するファイルに付ける拡張子を .xxx のフォーマットで定義しています。
+        private const string OutputFileExtension = ".temp";
+
+        // 出力ディレクトリ名。アプリのルートディレクトリに作成される。
+        private const string OutputDirectoryName = "output";
+
         private static void Main(string[] args)
         {
             // 分割するファイルのパスです。対象ファイルが存在しない場合は以降の処理は行いません。
-            var fileInfo = new FileInfo("target");
+            var fileInfo = new FileInfo(TargetFilePath);
             if (!fileInfo.Exists)
             {
                 Console.WriteLine($"{fileInfo.FullName} は存在しません");
                 return;
             }
 
-            new DirectoryInfo("output").Create();
+            new DirectoryInfo(OutputDirectoryName).Create();
 
             var targetFilePath = fileInfo.FullName;
             var targetBytes = ReadFileAsBytes(targetFilePath);
 
-            // 分割するパターンです。このパターンが先頭に来るように配列が分割されます。
-            var pattern = new byte[] { 0x7B, };
-            var splitAddresses = FindPatternAddresses(targetBytes, pattern);
+            var splitAddresses = FindPatternAddresses(targetBytes, SearchPattern);
 
             var sp = SplitBytesByHeaders(targetBytes, splitAddresses);
             for (var i = 0; i < sp.Count; i++)
             {
-                var p = $@"output\{i:D5}.temp";
+                var p = $@"output\{i:D5}{OutputFileExtension}";
                 WriteBytesToFile(p, sp[i]);
             }
         }
