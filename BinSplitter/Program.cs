@@ -5,6 +5,7 @@ using System.Linq;
 
 namespace BinSplitter
 {
+    // ReSharper disable once ClassNeverInstantiated.Global
     public class Program
     {
         // 分割するパターンです。このパターンが先頭に来るように配列が分割されます。
@@ -19,7 +20,7 @@ namespace BinSplitter
         // 出力ディレクトリ名。アプリのルートディレクトリに作成される。
         private const string OutputDirectoryName = "output";
 
-        private static void Main(string[] args)
+        private static void Main()
         {
             // 分割するファイルのパスです。対象ファイルが存在しない場合は以降の処理は行いません。
             var fileInfo = new FileInfo(TargetFilePath);
